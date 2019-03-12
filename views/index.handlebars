@@ -1,12 +1,15 @@
 <h1>Burgers!</h1>
+<img src="../public/assets/images/logo.png" alt="burger logo">
 
 <ul>
     {{#each burgers}}
+    {{#unless devoured}}
     <li>
         {{burger_name}}
 
         <button data-id="{{id}}" data-newdevoured="{{devoured}}" class="devour">Devour it!</button>
     </li>
+    {{/unless}}
     {{/each}}
 </ul>
 

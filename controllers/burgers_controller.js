@@ -1,13 +1,12 @@
 var express = require("express");
-
 var router = express.Router();
-
 var burger = require("../models/burger");
 
-router.get("/index", function (req, res) {
+router.get("/", function (req, res) {
     burger.all(function (data) {
+        // eslint-disable-next-line no-console
         console.log(data);
-        res.render("index", data);
+        res.render("index", { burgers: data });
     });
 });
 

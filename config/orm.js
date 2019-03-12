@@ -1,13 +1,11 @@
 var connection = require("../config/connection");
 
 var orm = {
-    selectAll: function () {
+    selectAll: function (cb) {
         var query = "SELECT * FROM burgers";
         connection.query(query, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            return result;
+            if (err) { throw err; }
+            cb(result);
         });
     },
     insertOne: function (name) {

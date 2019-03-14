@@ -10,9 +10,7 @@ var burger = {
         // unless you need to do something with data before send it back to the controller.
         // So you just can pass the callback from the controller directly to the orm like I did on `all`
         // e.g. `orm.insertOne(name, cd) {`
-        orm.insertOne(name, function (res) {
-            cb(res);
-        });
+        orm.insertOne(name, cb);
     },
     update: function (id, cb) {
         orm.updateOne(id, function (res) {

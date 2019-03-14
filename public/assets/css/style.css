@@ -1,6 +1,78 @@
 body {
-    margin: 0;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
     padding: 0;
-    color: blue;
     background: url("../images/background.png");
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "logo"
+        "lists"
+        "add";
+}
+
+#logo {
+    background: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: 25em;
+    height: 25em;
+    background-position: center;
+    margin: 20px;
+    display: grid;
+    grid-area: logo;
+}
+
+#lists {
+    display: grid;
+    grid-area: lists;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "not-devoured devoured";
+}
+
+#not-devoured {
+    display: grid;
+    grid-area: not-devoured;
+    margin: 10px 30px;
+    background: #ffffffcc;
+    border: 2px solid black;
+}
+
+#devoured {
+    display: grid;
+    grid-area: devoured;
+    margin: 10px 30px;
+    background: #ffffffcc;
+    border: 2px solid black;
+}
+
+#add {
+    display: grid;
+    grid-area: add;
+    background: #ffffffcc;
+    border: 2px solid black;
+    width: 30%;
+    margin: 20px auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+
+
+#about {
+    display: grid;
+    grid-area: about;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "about-title"
+        "about-body";
 }

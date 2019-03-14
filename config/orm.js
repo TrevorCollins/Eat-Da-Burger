@@ -19,25 +19,25 @@ var orm = {
     // TODO:
     // add the callback from your controller to the function signature
     // function (name, cb)
-    insertOne: function (name) {
+    insertOne: function (name, cb) {
         // BONUS: Use ES6 string template (note the back-tick) and use ${var_name} to interpolate the variable
         // let query = `INSERT INTO burgers (burger_name) VALUES ('${name}')`
-
+        
         var query = "INSERT INTO burgers (burger_name)";
         query += " VALUES ('" + name + "');";
-
 
         connection.query(query, function (err, result) {
             if (err) { throw err; }
 
             // TODO: use the callback here to pass the result set back to the controller
+            cb(result);
         });
     },
 
     // TODO:
     // add the callback from your controller to the function signature
     // function (id, cb)
-    updateOne: function (id) {
+    updateOne: function (id, cb) {
         // BONUS: use ES6 string template
 
         var query = "UPDATE burgers ";
@@ -48,6 +48,7 @@ var orm = {
             if (err) { throw err; }
 
             // TODO: use the callback here to pass the result set back to the controller
+            cb(result);
         });
     }
 };
